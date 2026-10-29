@@ -18,9 +18,9 @@
             </a>
         </div>
 		<div class="searchbox-container form-group">
-			<form th:action="@{/memo/search}" method="get">
+			<form th:action="@{/memos/search}" method="get">
 				<div class="input-inner-container">
-					<input type="text" name="keyword" placeholder="検索キーワードを入力してください">
+					<input type="text" name="keyword" placeholder="検索キーワードを入力してください" th:value="${keyword}" class="form-control">
 					<button type="submit" class="btn btn-search">検索</button>
 				</div>
 			</form>
