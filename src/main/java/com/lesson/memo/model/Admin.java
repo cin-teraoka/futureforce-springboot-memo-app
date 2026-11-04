@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -21,19 +21,19 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @NotNull
+    @NotBlank(message = "姓を入力してください")
     @Column(nullable = false, length = 255)
     private String lastName;
     
-    @NotNull
+    @NotBlank(message = "名を入力してください")
     @Column(nullable = false, length = 255)
     private String firstName;
     
-    @NotNull
+    @NotBlank(message = "メールアドレスを入力してください")
     @Column(nullable = false, unique = true, length = 255)
     private String email;
     
-    @NotNull
+    @NotBlank(message = "パスワードを入力してください")
     @Column(nullable = false, length = 255)
     private String password;
     
