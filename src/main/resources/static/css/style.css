@@ -531,3 +531,17 @@ textarea {
 .priority-pill.low:has(.priority-radio:checked) {
   background:#198754; color:#fff;
 }
+
+.input-inner-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.searchbox-container {
+	margin-bottom: 1.5rem;
+}
+
+.btn-search {
+	
+	white-space: nowrap;
+}
