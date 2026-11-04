@@ -45,8 +45,6 @@ public class AdminController {
 	@PostMapping("/create")
 	public String create(@ModelAttribute @Valid Admin admin,
             BindingResult result, Model model) {
-		System.out.println("AdminController.create() called with admin: " + admin);
-		System.out.println("result.hasErrors:" + result.hasErrors());
 		if(result.hasErrors()) {
 			return "admin-signup";
 		}

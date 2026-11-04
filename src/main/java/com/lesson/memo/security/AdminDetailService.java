@@ -22,9 +22,6 @@ public class AdminDetailService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO 自動生成されたメソッド・スタブ
-		
-		System.out.println("★loadUserByUsernameに届いた値: [" + username + "]");
-		
 		Admin admin = adminRepository.findByEmail(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User not found" + username));
 		return new org.springframework.security.core.userdetails.User(
@@ -33,5 +30,4 @@ public class AdminDetailService implements UserDetailsService {
 				AuthorityUtils.createAuthorityList("ROLE_ADMIN")
 				);
 	}
-
 }
